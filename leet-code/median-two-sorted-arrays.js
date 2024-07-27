@@ -23,11 +23,12 @@
 const findMedianSortedArrays = (nums1, nums2) => {
   console.log("Array 1 => ", nums1);
   console.log("Array 2 => ", nums2);
-  const mergedArray = [...nums1, ...nums2];
+  const mergedArray = [...nums1, ...nums2].sort((a,b) => a-b);
   console.log("Merged array => ", mergedArray);
 
   const median = Math.floor(mergedArray.length/2);
-  console.log(mergedArray.length%2 ? mergedArray[median] : (mergedArray[median-1] + mergedArray[median]) /2)
+  const result = mergedArray.length%2 ? mergedArray[median] : (mergedArray[median-1] + mergedArray[median]) /2;
+  console.log(result)
 };
 
-findMedianSortedArrays([1, 2], [3, 4]);
+findMedianSortedArrays([1, 3], [2]);
