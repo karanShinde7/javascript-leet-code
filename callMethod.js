@@ -15,10 +15,10 @@ const nameObject2 = {
 console.log("Using call() function borrowing ");
 nameObject.printFullName.call(nameObject2);
 
-function sayHello(){
-    console.log("--> Hi "+this.firstName+" "+this.lastName);
+function sayHello(homeTown, state){
+    console.log("--> I am "+this.firstName+" "+this.lastName, "and I am from "+homeTown+", "+state);
 }
 
 console.log("Separate function add call()");
-sayHello.call(nameObject)
-sayHello.call(nameObject2)
+sayHello.call(nameObject,"Pune", "Maharashtra")
+sayHello.call(nameObject2,"Delhi", "Delhi")
